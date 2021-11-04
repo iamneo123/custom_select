@@ -1,5 +1,4 @@
 function getTemplate(data = [], placeholder) {
-    console.log(data);
     const text = placeholder ?? 'Placeholder по умолчанию';
     const items = data.map(item => {
         return `<li class="select__option" data-type="option" data-value="${item.value}">${item.value}</li>`;
@@ -52,8 +51,6 @@ class Select {
     clickHandler(event) {
         const { type } = event.target.dataset;
 
-        console.log(type);
-
         if (type === 'input' || type === 'button') {
             console.log(1);
             this.toggle();
@@ -77,9 +74,7 @@ class Select {
         this.selectedValue = value;
         this.valueNode.textContent = value;
 
-
         this.highlight(item);
-
         this.close();
     }
 
